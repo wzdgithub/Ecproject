@@ -1,0 +1,38 @@
+<component name="libraryTable">
+  <library name="Spring" type="spring">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/asm-3.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/aspectjweaver-1.6.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/cglib-2.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/commons-dbcp-1.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/commons-pool-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/javassist-3.17.1-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/jstl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/junit-4.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/log4j-1.2.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/log4j-api-2.0-rc1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/log4j-core-2.0-rc1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/mybatis-3.2.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/mybatis-spring-1.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/slf4j-api-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/slf4j-log4j12-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-aop-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-aspects-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-beans-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-context-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-context-support-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-core-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-expression-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-jdbc-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-orm-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-test-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-tx-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-web-3.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../JavaEE/library/ssm/spring-webmvc-3.2.0.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

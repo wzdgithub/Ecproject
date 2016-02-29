@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.TGoodstypeMapper" >
+  <resultMap id="BaseResultMap" type="com.models.TGoodstype" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="goods_type1" property="goodsType1" jdbcType="VARCHAR" />
+    <result column="goods_type2" property="goodsType2" jdbcType="VARCHAR" />
+    <result column="goods_type3" property="goodsType3" jdbcType="VARCHAR" />
+    <result column="goods_type4" property="goodsType4" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, goods_id, goods_type1, goods_type2, goods_type3, goods_type4
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.models.TGoodstypeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_goodstype
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_goodstype
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_goodstype
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.models.TGoodstypeExample" >
+    delete from t_goodstype
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.models.TGoodstype" >
+    insert into t_goodstype (id, goods_id, goods_type1, 
+      goods_type2, goods_type3, goods_type4
+      )
+    values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{goodsType1,jdbcType=VARCHAR}, 
+      #{goodsType2,jdbcType=VARCHAR}, #{goodsType3,jdbcType=VARCHAR}, #{goodsType4,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.models.TGoodstype" >
+    insert into t_goodstype
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="goodsId != null" >
+        goods_id,
+      </if>
+      <if test="goodsType1 != null" >
+        goods_type1,
+      </if>
+      <if test="goodsType2 != null" >
+        goods_type2,
+      </if>
+      <if test="goodsType3 != null" >
+        goods_type3,
+      </if>
+      <if test="goodsType4 != null" >
+        goods_type4,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null" >
+        #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsType1 != null" >
+        #{goodsType1,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsType2 != null" >
+        #{goodsType2,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsType3 != null" >
+        #{goodsType3,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsType4 != null" >
+        #{goodsType4,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.models.TGoodstypeExample" resultType="java.lang.Integer" >
+    select count(*) from t_goodstype
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_goodstype
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsId != null" >
+        goods_id = #{record.goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsType1 != null" >
+        goods_type1 = #{record.goodsType1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsType2 != null" >
+        goods_type2 = #{record.goodsType2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsType3 != null" >
+        goods_type3 = #{record.goodsType3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsType4 != null" >
+        goods_type4 = #{record.goodsType4,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_goodstype
+    set id = #{record.id,jdbcType=INTEGER},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      goods_type1 = #{record.goodsType1,jdbcType=VARCHAR},
+      goods_type2 = #{record.goodsType2,jdbcType=VARCHAR},
+      goods_type3 = #{record.goodsType3,jdbcType=VARCHAR},
+      goods_type4 = #{record.goodsType4,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.models.TGoodstype" >
+    update t_goodstype
+    <set >
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsType1 != null" >
+        goods_type1 = #{goodsType1,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsType2 != null" >
+        goods_type2 = #{goodsType2,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsType3 != null" >
+        goods_type3 = #{goodsType3,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsType4 != null" >
+        goods_type4 = #{goodsType4,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.models.TGoodstype" >
+    update t_goodstype
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      goods_type1 = #{goodsType1,jdbcType=VARCHAR},
+      goods_type2 = #{goodsType2,jdbcType=VARCHAR},
+      goods_type3 = #{goodsType3,jdbcType=VARCHAR},
+      goods_type4 = #{goodsType4,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

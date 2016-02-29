@@ -1,0 +1,175 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
+
+    <!--使用c3p0配置数据源-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close"
+          p:driverClass="com.mysql.jdbc.Driver"
+          p:jdbcUrl="jdbc:mysql://localhost/db_ecproject"
+          p:user="root"
+          p:password="123"
+          p:maxPoolSize="40"
+          p:minPoolSize="2"
+          p:initialPoolSize="2"
+          p:maxIdleTime="30"/>
+
+    <!--配置sqlSessionFactory-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="typeAliasesPackage" value="com.models"/>
+        <property name="mapperLocations">
+            <array>
+                <value>classpath*:com/mapper/*.xml</value>
+            </array>
+        </property>
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageHelper">
+                    <property name="properties">
+                        <value>
+                            dialect=mysql
+                            reasonable=true
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+    </bean>
+
+    <bean id="advertisementMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TAdvertisementMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="buyerMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TBuyerMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="collectionMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TCollectionMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="commentMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TCommentMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="goodsMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TGoodsMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="goodsStatusMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TGoodsStatusMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="goodstypeMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TGoodstypeMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="logisticsMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TLogisticsMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="orderMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TOrderMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="pictureMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TPictureMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="replyMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TReplyMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="sellerMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TSellerMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="shippingAddressMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TShippingAddressMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="shopMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TShopMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="usedGoodsMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TUsedGoodsMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="visitLogMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TVisitLogMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+    <bean id="advertisementService" class="com.service.impl.AdvertisementServiceImpl"
+          p:advertisementMapper-ref="advertisementMapper"/>
+    <bean id="buyerService" class="com.service.impl.BuyerServiceImpl" p:buyerMapper-ref="buyerMapper"/>
+    <bean id="collectionService" class="com.service.impl.CollectionServiceImpl"
+          p:collectionMapper-ref="collectionMapper"/>
+    <bean id="commentService" class="com.service.impl.CommentServiceImpl" p:commentMapper-ref="commentMapper"/>
+    <bean id="goodsService" class="com.service.impl.GoodsServiceImpl" p:goodsMapper-ref="goodsMapper"/>
+    <bean id="goodsStatusService" class="com.service.impl.GoodsStatusServiceImpl"
+          p:goodsStatusMapper-ref="goodsStatusMapper"/>
+    <bean id="goodStypeService" class="com.service.impl.GoodStypeServiceImpl" p:goodstypeMapper-ref="goodstypeMapper"/>
+    <bean id="logisticsService" class="com.service.impl.LogisticsServiceImpl" p:logisticsMapper-ref="logisticsMapper"/>
+    <bean id="orderService" class="com.service.impl.OrderServiceImpl" p:orderMapper-ref="orderMapper"/>
+    <bean id="pictureService" class="com.service.impl.PictureServiceImpl" p:pictureMapper-ref="pictureMapper"/>
+    <bean id="replyService" class="com.service.impl.ReplyServiceImpl" p:replyMapper-ref="replyMapper"/>
+    <bean id="sellerService" class="com.service.impl.SellerServiceImpl" p:sellerMapper-ref="sellerMapper"/>
+    <bean id="shippingAddressService" class="com.service.impl.ShippingAddressServiceImpl"
+          p:shippingAddressMapper-ref="shippingAddressMapper"/>
+    <bean id="shopService" class="com.service.impl.ShopServiceImpl" p:shopMapper-ref="shopMapper"/>
+    <bean id="usedGoodsService" class="com.service.impl.UsedGoodsServiceImpl" p:usedGoodsMapper-ref="usedGoodsMapper"/>
+    <bean id="visitLogService" class="com.service.impl.VisitLogServiceImpl" p:visitLogMapper-ref="visitLogMapper"/>
+
+    <!--配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="save*" propagation="REQUIRED"/>
+            <tx:method name="delete*" propagation="REQUIRED"/>
+            <tx:method name="insert*" propagation="REQUIRED"/>
+            <tx:method name="update*" propagation="REQUIRED"/>
+            <tx:method name="add*" propagation="REQUIRED"/>
+            <tx:method name="modify*" propagation="REQUIRED"/>
+            <tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="select*" propagation="SUPPORTS" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:pointcut id="myPointcut" expression="bean(advertisementService)||
+                                                  bean(buyerService)||
+                                                  bean(collectionService)||
+                                                  bean(commentService)||
+                                                  bean(goodsService)||
+                                                  bean(goodsStatusService)||
+                                                  bean(goodStypeService)||
+                                                  bean(logisticsService)||
+                                                  bean(orderService)||
+                                                  bean(pictureService)||
+                                                  bean(replyService)||
+                                                  bean(sellerService)||
+                                                  bean(shippingAddressService)||
+                                                  bean(shopService)||
+                                                  bean(usedGoodsService)||
+                                                  bean(visitLogService)"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="myPointcut"/>
+    </aop:config>
+
+</beans>
