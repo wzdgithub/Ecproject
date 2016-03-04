@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BuyerController {
     @RequestMapping("/test")
     public String test(){
+        System.out.println("asdas");
         return "index.jsp";
     }
 }
