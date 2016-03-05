@@ -11,6 +11,7 @@
           <element id="library" level="project" name="Spring" />
           <element id="library" level="project" name="c3p0" />
           <element id="library" level="project" name="mybatis_plugins" />
+          <element id="library" level="project" name="junit" />
         </element>
       </element>
     </root>

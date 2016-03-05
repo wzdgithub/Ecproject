@@ -5,6 +5,8 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="buyer_id" property="buyerId" jdbcType="INTEGER" />
     <result column="shipping_address" property="shippingAddress" jdbcType="VARCHAR" />
+    <result column="shipping_phone" property="shippingPhone" jdbcType="VARCHAR" />
+    <result column="shipping_postcode" property="shippingPostcode" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -65,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, buyer_id, shipping_address
+    id, buyer_id, shipping_address, shipping_phone, shipping_postcode
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.models.TShippingAddressExample" >
     select
@@ -98,10 +100,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.models.TShippingAddress" >
-    insert into t_shipping_address (id, buyer_id, shipping_address
-      )
-    values (#{id,jdbcType=INTEGER}, #{buyerId,jdbcType=INTEGER}, #{shippingAddress,jdbcType=VARCHAR}
-      )
+    insert into t_shipping_address (id, buyer_id, shipping_address, 
+      shipping_phone, shipping_postcode)
+    values (#{id,jdbcType=INTEGER}, #{buyerId,jdbcType=INTEGER}, #{shippingAddress,jdbcType=VARCHAR}, 
+      #{shippingPhone,jdbcType=VARCHAR}, #{shippingPostcode,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.models.TShippingAddress" >
     insert into t_shipping_address
@@ -115,6 +117,12 @@
       <if test="shippingAddress != null" >
         shipping_address,
       </if>
+      <if test="shippingPhone != null" >
+        shipping_phone,
+      </if>
+      <if test="shippingPostcode != null" >
+        shipping_postcode,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -125,6 +133,12 @@
       </if>
       <if test="shippingAddress != null" >
         #{shippingAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingPhone != null" >
+        #{shippingPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingPostcode != null" >
+        #{shippingPostcode,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -146,6 +160,12 @@
       <if test="record.shippingAddress != null" >
         shipping_address = #{record.shippingAddress,jdbcType=VARCHAR},
       </if>
+      <if test="record.shippingPhone != null" >
+        shipping_phone = #{record.shippingPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shippingPostcode != null" >
+        shipping_postcode = #{record.shippingPostcode,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -155,7 +175,9 @@
     update t_shipping_address
     set id = #{record.id,jdbcType=INTEGER},
       buyer_id = #{record.buyerId,jdbcType=INTEGER},
-      shipping_address = #{record.shippingAddress,jdbcType=VARCHAR}
+      shipping_address = #{record.shippingAddress,jdbcType=VARCHAR},
+      shipping_phone = #{record.shippingPhone,jdbcType=VARCHAR},
+      shipping_postcode = #{record.shippingPostcode,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -169,13 +191,21 @@
       <if test="shippingAddress != null" >
         shipping_address = #{shippingAddress,jdbcType=VARCHAR},
       </if>
+      <if test="shippingPhone != null" >
+        shipping_phone = #{shippingPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingPostcode != null" >
+        shipping_postcode = #{shippingPostcode,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.models.TShippingAddress" >
     update t_shipping_address
     set buyer_id = #{buyerId,jdbcType=INTEGER},
-      shipping_address = #{shippingAddress,jdbcType=VARCHAR}
+      shipping_address = #{shippingAddress,jdbcType=VARCHAR},
+      shipping_phone = #{shippingPhone,jdbcType=VARCHAR},
+      shipping_postcode = #{shippingPostcode,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

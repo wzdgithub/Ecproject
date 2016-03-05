@@ -304,63 +304,123 @@ public class TOrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andBuyderIdIsNull() {
-            addCriterion("buyder_id is null");
+        public Criteria andOrderLogisticsPriceIsNull() {
+            addCriterion("order_logistics_price is null");
             return (Criteria) this;
         }
 
-        public Criteria andBuyderIdIsNotNull() {
-            addCriterion("buyder_id is not null");
+        public Criteria andOrderLogisticsPriceIsNotNull() {
+            addCriterion("order_logistics_price is not null");
             return (Criteria) this;
         }
 
-        public Criteria andBuyderIdEqualTo(Integer value) {
-            addCriterion("buyder_id =", value, "buyderId");
+        public Criteria andOrderLogisticsPriceEqualTo(Double value) {
+            addCriterion("order_logistics_price =", value, "orderLogisticsPrice");
             return (Criteria) this;
         }
 
-        public Criteria andBuyderIdNotEqualTo(Integer value) {
-            addCriterion("buyder_id <>", value, "buyderId");
+        public Criteria andOrderLogisticsPriceNotEqualTo(Double value) {
+            addCriterion("order_logistics_price <>", value, "orderLogisticsPrice");
             return (Criteria) this;
         }
 
-        public Criteria andBuyderIdGreaterThan(Integer value) {
-            addCriterion("buyder_id >", value, "buyderId");
+        public Criteria andOrderLogisticsPriceGreaterThan(Double value) {
+            addCriterion("order_logistics_price >", value, "orderLogisticsPrice");
             return (Criteria) this;
         }
 
-        public Criteria andBuyderIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("buyder_id >=", value, "buyderId");
+        public Criteria andOrderLogisticsPriceGreaterThanOrEqualTo(Double value) {
+            addCriterion("order_logistics_price >=", value, "orderLogisticsPrice");
             return (Criteria) this;
         }
 
-        public Criteria andBuyderIdLessThan(Integer value) {
-            addCriterion("buyder_id <", value, "buyderId");
+        public Criteria andOrderLogisticsPriceLessThan(Double value) {
+            addCriterion("order_logistics_price <", value, "orderLogisticsPrice");
             return (Criteria) this;
         }
 
-        public Criteria andBuyderIdLessThanOrEqualTo(Integer value) {
-            addCriterion("buyder_id <=", value, "buyderId");
+        public Criteria andOrderLogisticsPriceLessThanOrEqualTo(Double value) {
+            addCriterion("order_logistics_price <=", value, "orderLogisticsPrice");
             return (Criteria) this;
         }
 
-        public Criteria andBuyderIdIn(List<Integer> values) {
-            addCriterion("buyder_id in", values, "buyderId");
+        public Criteria andOrderLogisticsPriceIn(List<Double> values) {
+            addCriterion("order_logistics_price in", values, "orderLogisticsPrice");
             return (Criteria) this;
         }
 
-        public Criteria andBuyderIdNotIn(List<Integer> values) {
-            addCriterion("buyder_id not in", values, "buyderId");
+        public Criteria andOrderLogisticsPriceNotIn(List<Double> values) {
+            addCriterion("order_logistics_price not in", values, "orderLogisticsPrice");
             return (Criteria) this;
         }
 
-        public Criteria andBuyderIdBetween(Integer value1, Integer value2) {
-            addCriterion("buyder_id between", value1, value2, "buyderId");
+        public Criteria andOrderLogisticsPriceBetween(Double value1, Double value2) {
+            addCriterion("order_logistics_price between", value1, value2, "orderLogisticsPrice");
             return (Criteria) this;
         }
 
-        public Criteria andBuyderIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("buyder_id not between", value1, value2, "buyderId");
+        public Criteria andOrderLogisticsPriceNotBetween(Double value1, Double value2) {
+            addCriterion("order_logistics_price not between", value1, value2, "orderLogisticsPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIdIsNull() {
+            addCriterion("buyer_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIdIsNotNull() {
+            addCriterion("buyer_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIdEqualTo(Integer value) {
+            addCriterion("buyer_id =", value, "buyerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIdNotEqualTo(Integer value) {
+            addCriterion("buyer_id <>", value, "buyerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIdGreaterThan(Integer value) {
+            addCriterion("buyer_id >", value, "buyerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("buyer_id >=", value, "buyerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIdLessThan(Integer value) {
+            addCriterion("buyer_id <", value, "buyerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIdLessThanOrEqualTo(Integer value) {
+            addCriterion("buyer_id <=", value, "buyerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIdIn(List<Integer> values) {
+            addCriterion("buyer_id in", values, "buyerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIdNotIn(List<Integer> values) {
+            addCriterion("buyer_id not in", values, "buyerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIdBetween(Integer value1, Integer value2) {
+            addCriterion("buyer_id between", value1, value2, "buyerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBuyerIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("buyer_id not between", value1, value2, "buyerId");
             return (Criteria) this;
         }
 

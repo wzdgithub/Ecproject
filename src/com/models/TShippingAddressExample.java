@@ -293,6 +293,146 @@ public class TShippingAddressExample {
             addCriterion("shipping_address not between", value1, value2, "shippingAddress");
             return (Criteria) this;
         }
+
+        public Criteria andShippingPhoneIsNull() {
+            addCriterion("shipping_phone is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneIsNotNull() {
+            addCriterion("shipping_phone is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneEqualTo(String value) {
+            addCriterion("shipping_phone =", value, "shippingPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneNotEqualTo(String value) {
+            addCriterion("shipping_phone <>", value, "shippingPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneGreaterThan(String value) {
+            addCriterion("shipping_phone >", value, "shippingPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneGreaterThanOrEqualTo(String value) {
+            addCriterion("shipping_phone >=", value, "shippingPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneLessThan(String value) {
+            addCriterion("shipping_phone <", value, "shippingPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneLessThanOrEqualTo(String value) {
+            addCriterion("shipping_phone <=", value, "shippingPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneLike(String value) {
+            addCriterion("shipping_phone like", value, "shippingPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneNotLike(String value) {
+            addCriterion("shipping_phone not like", value, "shippingPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneIn(List<String> values) {
+            addCriterion("shipping_phone in", values, "shippingPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneNotIn(List<String> values) {
+            addCriterion("shipping_phone not in", values, "shippingPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneBetween(String value1, String value2) {
+            addCriterion("shipping_phone between", value1, value2, "shippingPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPhoneNotBetween(String value1, String value2) {
+            addCriterion("shipping_phone not between", value1, value2, "shippingPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeIsNull() {
+            addCriterion("shipping_postcode is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeIsNotNull() {
+            addCriterion("shipping_postcode is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeEqualTo(String value) {
+            addCriterion("shipping_postcode =", value, "shippingPostcode");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeNotEqualTo(String value) {
+            addCriterion("shipping_postcode <>", value, "shippingPostcode");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeGreaterThan(String value) {
+            addCriterion("shipping_postcode >", value, "shippingPostcode");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeGreaterThanOrEqualTo(String value) {
+            addCriterion("shipping_postcode >=", value, "shippingPostcode");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeLessThan(String value) {
+            addCriterion("shipping_postcode <", value, "shippingPostcode");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeLessThanOrEqualTo(String value) {
+            addCriterion("shipping_postcode <=", value, "shippingPostcode");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeLike(String value) {
+            addCriterion("shipping_postcode like", value, "shippingPostcode");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeNotLike(String value) {
+            addCriterion("shipping_postcode not like", value, "shippingPostcode");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeIn(List<String> values) {
+            addCriterion("shipping_postcode in", values, "shippingPostcode");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeNotIn(List<String> values) {
+            addCriterion("shipping_postcode not in", values, "shippingPostcode");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeBetween(String value1, String value2) {
+            addCriterion("shipping_postcode between", value1, value2, "shippingPostcode");
+            return (Criteria) this;
+        }
+
+        public Criteria andShippingPostcodeNotBetween(String value1, String value2) {
+            addCriterion("shipping_postcode not between", value1, value2, "shippingPostcode");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

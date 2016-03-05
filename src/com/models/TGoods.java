@@ -7,9 +7,13 @@ public class TGoods {
 
     private Double goodsprice;
 
-    private String goodsversion;
+    private String goodsInf;
 
     private Integer shopId;
+
+    private Integer goodsVolume;
+
+    private String previewPic;
 
     public Integer getId() {
         return id;
@@ -35,12 +39,12 @@ public class TGoods {
         this.goodsprice = goodsprice;
     }
 
-    public String getGoodsversion() {
-        return goodsversion;
+    public String getGoodsInf() {
+        return goodsInf;
     }
 
-    public void setGoodsversion(String goodsversion) {
-        this.goodsversion = goodsversion == null ? null : goodsversion.trim();
+    public void setGoodsInf(String goodsInf) {
+        this.goodsInf = goodsInf == null ? null : goodsInf.trim();
     }
 
     public Integer getShopId() {
@@ -49,5 +53,21 @@ public class TGoods {
 
     public void setShopId(Integer shopId) {
         this.shopId = shopId;
+    }
+
+    public Integer getGoodsVolume() {
+        return goodsVolume;
+    }
+
+    public void setGoodsVolume(Integer goodsVolume) {
+        this.goodsVolume = goodsVolume;
+    }
+
+    public String getPreviewPic() {
+        return previewPic;
+    }
+
+    public void setPreviewPic(String previewPic) {
+        this.previewPic = previewPic == null ? null : previewPic.trim();
     }
 }

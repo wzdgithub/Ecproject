@@ -7,6 +7,7 @@
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="credit_level" property="creditLevel" jdbcType="INTEGER" />
     <result column="check_status" property="checkStatus" jdbcType="VARCHAR" />
+    <result column="check_score" property="checkScore" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, username, password, credit_level, check_status
+    id, username, password, credit_level, check_status, check_score
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.models.TSellerExample" >
     select
@@ -101,9 +102,11 @@
   </delete>
   <insert id="insert" parameterType="com.models.TSeller" >
     insert into t_seller (id, username, password, 
-      credit_level, check_status)
+      credit_level, check_status, check_score
+      )
     values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{creditLevel,jdbcType=INTEGER}, #{checkStatus,jdbcType=VARCHAR})
+      #{creditLevel,jdbcType=INTEGER}, #{checkStatus,jdbcType=VARCHAR}, #{checkScore,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.models.TSeller" >
     insert into t_seller
@@ -123,6 +126,9 @@
       <if test="checkStatus != null" >
         check_status,
       </if>
+      <if test="checkScore != null" >
+        check_score,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -139,6 +145,9 @@
       </if>
       <if test="checkStatus != null" >
         #{checkStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="checkScore != null" >
+        #{checkScore,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -166,6 +175,9 @@
       <if test="record.checkStatus != null" >
         check_status = #{record.checkStatus,jdbcType=VARCHAR},
       </if>
+      <if test="record.checkScore != null" >
+        check_score = #{record.checkScore,jdbcType=INTEGER},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,7 +189,8 @@
       username = #{record.username,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
       credit_level = #{record.creditLevel,jdbcType=INTEGER},
-      check_status = #{record.checkStatus,jdbcType=VARCHAR}
+      check_status = #{record.checkStatus,jdbcType=VARCHAR},
+      check_score = #{record.checkScore,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -197,6 +210,9 @@
       <if test="checkStatus != null" >
         check_status = #{checkStatus,jdbcType=VARCHAR},
       </if>
+      <if test="checkScore != null" >
+        check_score = #{checkScore,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -205,7 +221,8 @@
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       credit_level = #{creditLevel,jdbcType=INTEGER},
-      check_status = #{checkStatus,jdbcType=VARCHAR}
+      check_status = #{checkStatus,jdbcType=VARCHAR},
+      check_score = #{checkScore,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -5,6 +5,8 @@ public class TPicture {
 
     private String picture;
 
+    private Integer goodsId;
+
     private Integer shopId;
 
     public Integer getId() {
@@ -21,6 +23,14 @@ public class TPicture {
 
     public void setPicture(String picture) {
         this.picture = picture == null ? null : picture.trim();
+    }
+
+    public Integer getGoodsId() {
+        return goodsId;
+    }
+
+    public void setGoodsId(Integer goodsId) {
+        this.goodsId = goodsId;
     }
 
     public Integer getShopId() {

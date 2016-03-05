@@ -6,7 +6,7 @@
     <result column="adv_content" property="advContent" jdbcType="VARCHAR" />
     <result column="adv_cost" property="advCost" jdbcType="DOUBLE" />
     <result column="adv_bidding_state" property="advBiddingState" jdbcType="VARCHAR" />
-    <result column="adv_active_time" property="advActiveTime" jdbcType="DATE" />
+    <result column="adv_active_time" property="advActiveTime" jdbcType="TIMESTAMP" />
     <result column="adv_state" property="advState" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -105,7 +105,7 @@
       adv_bidding_state, adv_active_time, adv_state
       )
     values (#{id,jdbcType=INTEGER}, #{advContent,jdbcType=VARCHAR}, #{advCost,jdbcType=DOUBLE}, 
-      #{advBiddingState,jdbcType=VARCHAR}, #{advActiveTime,jdbcType=DATE}, #{advState,jdbcType=VARCHAR}
+      #{advBiddingState,jdbcType=VARCHAR}, #{advActiveTime,jdbcType=TIMESTAMP}, #{advState,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.models.TAdvertisement" >
@@ -144,7 +144,7 @@
         #{advBiddingState,jdbcType=VARCHAR},
       </if>
       <if test="advActiveTime != null" >
-        #{advActiveTime,jdbcType=DATE},
+        #{advActiveTime,jdbcType=TIMESTAMP},
       </if>
       <if test="advState != null" >
         #{advState,jdbcType=VARCHAR},
@@ -173,7 +173,7 @@
         adv_bidding_state = #{record.advBiddingState,jdbcType=VARCHAR},
       </if>
       <if test="record.advActiveTime != null" >
-        adv_active_time = #{record.advActiveTime,jdbcType=DATE},
+        adv_active_time = #{record.advActiveTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.advState != null" >
         adv_state = #{record.advState,jdbcType=VARCHAR},
@@ -189,7 +189,7 @@
       adv_content = #{record.advContent,jdbcType=VARCHAR},
       adv_cost = #{record.advCost,jdbcType=DOUBLE},
       adv_bidding_state = #{record.advBiddingState,jdbcType=VARCHAR},
-      adv_active_time = #{record.advActiveTime,jdbcType=DATE},
+      adv_active_time = #{record.advActiveTime,jdbcType=TIMESTAMP},
       adv_state = #{record.advState,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -208,7 +208,7 @@
         adv_bidding_state = #{advBiddingState,jdbcType=VARCHAR},
       </if>
       <if test="advActiveTime != null" >
-        adv_active_time = #{advActiveTime,jdbcType=DATE},
+        adv_active_time = #{advActiveTime,jdbcType=TIMESTAMP},
       </if>
       <if test="advState != null" >
         adv_state = #{advState,jdbcType=VARCHAR},
@@ -221,7 +221,7 @@
     set adv_content = #{advContent,jdbcType=VARCHAR},
       adv_cost = #{advCost,jdbcType=DOUBLE},
       adv_bidding_state = #{advBiddingState,jdbcType=VARCHAR},
-      adv_active_time = #{advActiveTime,jdbcType=DATE},
+      adv_active_time = #{advActiveTime,jdbcType=TIMESTAMP},
       adv_state = #{advState,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>

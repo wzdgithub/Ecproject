@@ -9,21 +9,21 @@
 		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
     <bean class="com.controller.AdvertisementController"/>
-    <bean class="com.controller.BuyerController"/>
-    <bean class="com.controller.CollectionController"/>
-    <bean class="com.controller.CommentController"/>
-    <bean class="com.controller.GoodsController"/>
-    <bean class="com.controller.GoodsStatusController"/>
-    <bean class="com.controller.GoodStypeController"/>
-    <bean class="com.controller.LogisticsController"/>
-    <bean class="com.controller.OrderController"/>
-    <bean class="com.controller.PictureController"/>
-    <bean class="com.controller.ReplyController"/>
-    <bean class="com.controller.SellerController"/>
-    <bean class="com.controller.ShippingAddressController"/>
-    <bean class="com.controller.ShopController"/>
-    <bean class="com.controller.UsedGoodsController"/>
-    <bean class="com.controller.VisitLogController"/>
+    <!--<bean class="com.controller.BuyerController"/>-->
+    <!--<bean class="com.controller.CollectionController"/>-->
+    <!--<bean class="com.controller.CommentController"/>-->
+    <!--<bean class="com.controller.GoodsController"/>-->
+    <!--<bean class="com.controller.GoodsStatusController"/>-->
+    <!--<bean class="com.controller.GoodStypeController"/>-->
+    <!--<bean class="com.controller.LogisticsController"/>-->
+    <!--<bean class="com.controller.OrderController"/>-->
+    <!--<bean class="com.controller.PictureController"/>-->
+    <!--<bean class="com.controller.ReplyController"/>-->
+    <!--<bean class="com.controller.SellerController"/>-->
+    <!--<bean class="com.controller.ShippingAddressController"/>-->
+    <!--<bean class="com.controller.ShopController"/>-->
+    <!--<bean class="com.controller.UsedGoodsController"/>-->
+    <!--<bean class="com.controller.VisitLogController"/>-->
 
 
     <mvc:annotation-driven></mvc:annotation-driven>

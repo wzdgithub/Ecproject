@@ -5,6 +5,7 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="buyer_id" property="buyerId" jdbcType="INTEGER" />
     <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="visit_time" property="visitTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -65,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, buyer_id, shop_id
+    id, buyer_id, shop_id, visit_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.models.TVisitLogExample" >
     select
@@ -98,10 +99,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.models.TVisitLog" >
-    insert into t_visit_log (id, buyer_id, shop_id
-      )
-    values (#{id,jdbcType=INTEGER}, #{buyerId,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER}
-      )
+    insert into t_visit_log (id, buyer_id, shop_id, 
+      visit_time)
+    values (#{id,jdbcType=INTEGER}, #{buyerId,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER}, 
+      #{visitTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.models.TVisitLog" >
     insert into t_visit_log
@@ -115,6 +116,9 @@
       <if test="shopId != null" >
         shop_id,
       </if>
+      <if test="visitTime != null" >
+        visit_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -125,6 +129,9 @@
       </if>
       <if test="shopId != null" >
         #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="visitTime != null" >
+        #{visitTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -146,6 +153,9 @@
       <if test="record.shopId != null" >
         shop_id = #{record.shopId,jdbcType=INTEGER},
       </if>
+      <if test="record.visitTime != null" >
+        visit_time = #{record.visitTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -155,7 +165,8 @@
     update t_visit_log
     set id = #{record.id,jdbcType=INTEGER},
       buyer_id = #{record.buyerId,jdbcType=INTEGER},
-      shop_id = #{record.shopId,jdbcType=INTEGER}
+      shop_id = #{record.shopId,jdbcType=INTEGER},
+      visit_time = #{record.visitTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -169,13 +180,17 @@
       <if test="shopId != null" >
         shop_id = #{shopId,jdbcType=INTEGER},
       </if>
+      <if test="visitTime != null" >
+        visit_time = #{visitTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.models.TVisitLog" >
     update t_visit_log
     set buyer_id = #{buyerId,jdbcType=INTEGER},
-      shop_id = #{shopId,jdbcType=INTEGER}
+      shop_id = #{shopId,jdbcType=INTEGER},
+      visit_time = #{visitTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

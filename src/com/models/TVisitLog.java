@@ -1,11 +1,15 @@
 package com.models;
 
+import java.util.Date;
+
 public class TVisitLog {
     private Integer id;
 
     private Integer buyerId;
 
     private Integer shopId;
+
+    private Date visitTime;
 
     public Integer getId() {
         return id;
@@ -29,5 +33,13 @@ public class TVisitLog {
 
     public void setShopId(Integer shopId) {
         this.shopId = shopId;
+    }
+
+    public Date getVisitTime() {
+        return visitTime;
+    }
+
+    public void setVisitTime(Date visitTime) {
+        this.visitTime = visitTime;
     }
 }

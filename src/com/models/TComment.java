@@ -9,6 +9,8 @@ public class TComment {
 
     private String comment;
 
+    private String replyComment;
+
     private Integer buyerId;
 
     private Date time;
@@ -35,6 +37,14 @@ public class TComment {
 
     public void setComment(String comment) {
         this.comment = comment == null ? null : comment.trim();
+    }
+
+    public String getReplyComment() {
+        return replyComment;
+    }
+
+    public void setReplyComment(String replyComment) {
+        this.replyComment = replyComment == null ? null : replyComment.trim();
     }
 
     public Integer getBuyerId() {

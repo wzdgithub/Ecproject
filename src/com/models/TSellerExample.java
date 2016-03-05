@@ -433,6 +433,66 @@ public class TSellerExample {
             addCriterion("check_status not between", value1, value2, "checkStatus");
             return (Criteria) this;
         }
+
+        public Criteria andCheckScoreIsNull() {
+            addCriterion("check_score is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCheckScoreIsNotNull() {
+            addCriterion("check_score is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCheckScoreEqualTo(Integer value) {
+            addCriterion("check_score =", value, "checkScore");
+            return (Criteria) this;
+        }
+
+        public Criteria andCheckScoreNotEqualTo(Integer value) {
+            addCriterion("check_score <>", value, "checkScore");
+            return (Criteria) this;
+        }
+
+        public Criteria andCheckScoreGreaterThan(Integer value) {
+            addCriterion("check_score >", value, "checkScore");
+            return (Criteria) this;
+        }
+
+        public Criteria andCheckScoreGreaterThanOrEqualTo(Integer value) {
+            addCriterion("check_score >=", value, "checkScore");
+            return (Criteria) this;
+        }
+
+        public Criteria andCheckScoreLessThan(Integer value) {
+            addCriterion("check_score <", value, "checkScore");
+            return (Criteria) this;
+        }
+
+        public Criteria andCheckScoreLessThanOrEqualTo(Integer value) {
+            addCriterion("check_score <=", value, "checkScore");
+            return (Criteria) this;
+        }
+
+        public Criteria andCheckScoreIn(List<Integer> values) {
+            addCriterion("check_score in", values, "checkScore");
+            return (Criteria) this;
+        }
+
+        public Criteria andCheckScoreNotIn(List<Integer> values) {
+            addCriterion("check_score not in", values, "checkScore");
+            return (Criteria) this;
+        }
+
+        public Criteria andCheckScoreBetween(Integer value1, Integer value2) {
+            addCriterion("check_score between", value1, value2, "checkScore");
+            return (Criteria) this;
+        }
+
+        public Criteria andCheckScoreNotBetween(Integer value1, Integer value2) {
+            addCriterion("check_score not between", value1, value2, "checkScore");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

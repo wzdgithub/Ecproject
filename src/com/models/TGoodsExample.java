@@ -294,73 +294,73 @@ public class TGoodsExample {
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionIsNull() {
-            addCriterion("goodsversion is null");
+        public Criteria andGoodsInfIsNull() {
+            addCriterion("goods_inf is null");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionIsNotNull() {
-            addCriterion("goodsversion is not null");
+        public Criteria andGoodsInfIsNotNull() {
+            addCriterion("goods_inf is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionEqualTo(String value) {
-            addCriterion("goodsversion =", value, "goodsversion");
+        public Criteria andGoodsInfEqualTo(String value) {
+            addCriterion("goods_inf =", value, "goodsInf");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionNotEqualTo(String value) {
-            addCriterion("goodsversion <>", value, "goodsversion");
+        public Criteria andGoodsInfNotEqualTo(String value) {
+            addCriterion("goods_inf <>", value, "goodsInf");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionGreaterThan(String value) {
-            addCriterion("goodsversion >", value, "goodsversion");
+        public Criteria andGoodsInfGreaterThan(String value) {
+            addCriterion("goods_inf >", value, "goodsInf");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionGreaterThanOrEqualTo(String value) {
-            addCriterion("goodsversion >=", value, "goodsversion");
+        public Criteria andGoodsInfGreaterThanOrEqualTo(String value) {
+            addCriterion("goods_inf >=", value, "goodsInf");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionLessThan(String value) {
-            addCriterion("goodsversion <", value, "goodsversion");
+        public Criteria andGoodsInfLessThan(String value) {
+            addCriterion("goods_inf <", value, "goodsInf");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionLessThanOrEqualTo(String value) {
-            addCriterion("goodsversion <=", value, "goodsversion");
+        public Criteria andGoodsInfLessThanOrEqualTo(String value) {
+            addCriterion("goods_inf <=", value, "goodsInf");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionLike(String value) {
-            addCriterion("goodsversion like", value, "goodsversion");
+        public Criteria andGoodsInfLike(String value) {
+            addCriterion("goods_inf like", value, "goodsInf");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionNotLike(String value) {
-            addCriterion("goodsversion not like", value, "goodsversion");
+        public Criteria andGoodsInfNotLike(String value) {
+            addCriterion("goods_inf not like", value, "goodsInf");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionIn(List<String> values) {
-            addCriterion("goodsversion in", values, "goodsversion");
+        public Criteria andGoodsInfIn(List<String> values) {
+            addCriterion("goods_inf in", values, "goodsInf");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionNotIn(List<String> values) {
-            addCriterion("goodsversion not in", values, "goodsversion");
+        public Criteria andGoodsInfNotIn(List<String> values) {
+            addCriterion("goods_inf not in", values, "goodsInf");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionBetween(String value1, String value2) {
-            addCriterion("goodsversion between", value1, value2, "goodsversion");
+        public Criteria andGoodsInfBetween(String value1, String value2) {
+            addCriterion("goods_inf between", value1, value2, "goodsInf");
             return (Criteria) this;
         }
 
-        public Criteria andGoodsversionNotBetween(String value1, String value2) {
-            addCriterion("goodsversion not between", value1, value2, "goodsversion");
+        public Criteria andGoodsInfNotBetween(String value1, String value2) {
+            addCriterion("goods_inf not between", value1, value2, "goodsInf");
             return (Criteria) this;
         }
 
@@ -421,6 +421,136 @@ public class TGoodsExample {
 
         public Criteria andShopIdNotBetween(Integer value1, Integer value2) {
             addCriterion("shop_id not between", value1, value2, "shopId");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsVolumeIsNull() {
+            addCriterion("goods_volume is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsVolumeIsNotNull() {
+            addCriterion("goods_volume is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsVolumeEqualTo(Integer value) {
+            addCriterion("goods_volume =", value, "goodsVolume");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsVolumeNotEqualTo(Integer value) {
+            addCriterion("goods_volume <>", value, "goodsVolume");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsVolumeGreaterThan(Integer value) {
+            addCriterion("goods_volume >", value, "goodsVolume");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsVolumeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("goods_volume >=", value, "goodsVolume");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsVolumeLessThan(Integer value) {
+            addCriterion("goods_volume <", value, "goodsVolume");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsVolumeLessThanOrEqualTo(Integer value) {
+            addCriterion("goods_volume <=", value, "goodsVolume");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsVolumeIn(List<Integer> values) {
+            addCriterion("goods_volume in", values, "goodsVolume");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsVolumeNotIn(List<Integer> values) {
+            addCriterion("goods_volume not in", values, "goodsVolume");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsVolumeBetween(Integer value1, Integer value2) {
+            addCriterion("goods_volume between", value1, value2, "goodsVolume");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsVolumeNotBetween(Integer value1, Integer value2) {
+            addCriterion("goods_volume not between", value1, value2, "goodsVolume");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicIsNull() {
+            addCriterion("preview_pic is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicIsNotNull() {
+            addCriterion("preview_pic is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicEqualTo(String value) {
+            addCriterion("preview_pic =", value, "previewPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicNotEqualTo(String value) {
+            addCriterion("preview_pic <>", value, "previewPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicGreaterThan(String value) {
+            addCriterion("preview_pic >", value, "previewPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicGreaterThanOrEqualTo(String value) {
+            addCriterion("preview_pic >=", value, "previewPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicLessThan(String value) {
+            addCriterion("preview_pic <", value, "previewPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicLessThanOrEqualTo(String value) {
+            addCriterion("preview_pic <=", value, "previewPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicLike(String value) {
+            addCriterion("preview_pic like", value, "previewPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicNotLike(String value) {
+            addCriterion("preview_pic not like", value, "previewPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicIn(List<String> values) {
+            addCriterion("preview_pic in", values, "previewPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicNotIn(List<String> values) {
+            addCriterion("preview_pic not in", values, "previewPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicBetween(String value1, String value2) {
+            addCriterion("preview_pic between", value1, value2, "previewPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPreviewPicNotBetween(String value1, String value2) {
+            addCriterion("preview_pic not between", value1, value2, "previewPic");
             return (Criteria) this;
         }
     }

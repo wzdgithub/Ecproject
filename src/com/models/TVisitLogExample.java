@@ -1,6 +1,7 @@
 package com.models;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TVisitLogExample {
@@ -281,6 +282,66 @@ public class TVisitLogExample {
 
         public Criteria andShopIdNotBetween(Integer value1, Integer value2) {
             addCriterion("shop_id not between", value1, value2, "shopId");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitTimeIsNull() {
+            addCriterion("visit_time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitTimeIsNotNull() {
+            addCriterion("visit_time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitTimeEqualTo(Date value) {
+            addCriterion("visit_time =", value, "visitTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitTimeNotEqualTo(Date value) {
+            addCriterion("visit_time <>", value, "visitTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitTimeGreaterThan(Date value) {
+            addCriterion("visit_time >", value, "visitTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("visit_time >=", value, "visitTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitTimeLessThan(Date value) {
+            addCriterion("visit_time <", value, "visitTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitTimeLessThanOrEqualTo(Date value) {
+            addCriterion("visit_time <=", value, "visitTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitTimeIn(List<Date> values) {
+            addCriterion("visit_time in", values, "visitTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitTimeNotIn(List<Date> values) {
+            addCriterion("visit_time not in", values, "visitTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitTimeBetween(Date value1, Date value2) {
+            addCriterion("visit_time between", value1, value2, "visitTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitTimeNotBetween(Date value1, Date value2) {
+            addCriterion("visit_time not between", value1, value2, "visitTime");
             return (Criteria) this;
         }
     }

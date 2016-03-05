@@ -2,7 +2,6 @@ package com.models;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 public class TAdvertisementExample {
@@ -104,32 +103,6 @@ public class TAdvertisementExample {
                 throw new RuntimeException("Between values for " + property + " cannot be null");
             }
             criteria.add(new Criterion(condition, value1, value2));
-        }
-
-        protected void addCriterionForJDBCDate(String condition, Date value, String property) {
-            if (value == null) {
-                throw new RuntimeException("Value for " + property + " cannot be null");
-            }
-            addCriterion(condition, new java.sql.Date(value.getTime()), property);
-        }
-
-        protected void addCriterionForJDBCDate(String condition, List<Date> values, String property) {
-            if (values == null || values.size() == 0) {
-                throw new RuntimeException("Value list for " + property + " cannot be null or empty");
-            }
-            List<java.sql.Date> dateList = new ArrayList<java.sql.Date>();
-            Iterator<Date> iter = values.iterator();
-            while (iter.hasNext()) {
-                dateList.add(new java.sql.Date(iter.next().getTime()));
-            }
-            addCriterion(condition, dateList, property);
-        }
-
-        protected void addCriterionForJDBCDate(String condition, Date value1, Date value2, String property) {
-            if (value1 == null || value2 == null) {
-                throw new RuntimeException("Between values for " + property + " cannot be null");
-            }
-            addCriterion(condition, new java.sql.Date(value1.getTime()), new java.sql.Date(value2.getTime()), property);
         }
 
         public Criteria andIdIsNull() {
@@ -403,52 +376,52 @@ public class TAdvertisementExample {
         }
 
         public Criteria andAdvActiveTimeEqualTo(Date value) {
-            addCriterionForJDBCDate("adv_active_time =", value, "advActiveTime");
+            addCriterion("adv_active_time =", value, "advActiveTime");
             return (Criteria) this;
         }
 
         public Criteria andAdvActiveTimeNotEqualTo(Date value) {
-            addCriterionForJDBCDate("adv_active_time <>", value, "advActiveTime");
+            addCriterion("adv_active_time <>", value, "advActiveTime");
             return (Criteria) this;
         }
 
         public Criteria andAdvActiveTimeGreaterThan(Date value) {
-            addCriterionForJDBCDate("adv_active_time >", value, "advActiveTime");
+            addCriterion("adv_active_time >", value, "advActiveTime");
             return (Criteria) this;
         }
 
         public Criteria andAdvActiveTimeGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("adv_active_time >=", value, "advActiveTime");
+            addCriterion("adv_active_time >=", value, "advActiveTime");
             return (Criteria) this;
         }
 
         public Criteria andAdvActiveTimeLessThan(Date value) {
-            addCriterionForJDBCDate("adv_active_time <", value, "advActiveTime");
+            addCriterion("adv_active_time <", value, "advActiveTime");
             return (Criteria) this;
         }
 
         public Criteria andAdvActiveTimeLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("adv_active_time <=", value, "advActiveTime");
+            addCriterion("adv_active_time <=", value, "advActiveTime");
             return (Criteria) this;
         }
 
         public Criteria andAdvActiveTimeIn(List<Date> values) {
-            addCriterionForJDBCDate("adv_active_time in", values, "advActiveTime");
+            addCriterion("adv_active_time in", values, "advActiveTime");
             return (Criteria) this;
         }
 
         public Criteria andAdvActiveTimeNotIn(List<Date> values) {
-            addCriterionForJDBCDate("adv_active_time not in", values, "advActiveTime");
+            addCriterion("adv_active_time not in", values, "advActiveTime");
             return (Criteria) this;
         }
 
         public Criteria andAdvActiveTimeBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("adv_active_time between", value1, value2, "advActiveTime");
+            addCriterion("adv_active_time between", value1, value2, "advActiveTime");
             return (Criteria) this;
         }
 
         public Criteria andAdvActiveTimeNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("adv_active_time not between", value1, value2, "advActiveTime");
+            addCriterion("adv_active_time not between", value1, value2, "advActiveTime");
             return (Criteria) this;
         }
 

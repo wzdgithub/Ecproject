@@ -164,6 +164,76 @@ public class TLogisticsExample {
             return (Criteria) this;
         }
 
+        public Criteria andCompanyIsNull() {
+            addCriterion("company is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyIsNotNull() {
+            addCriterion("company is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyEqualTo(String value) {
+            addCriterion("company =", value, "company");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyNotEqualTo(String value) {
+            addCriterion("company <>", value, "company");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyGreaterThan(String value) {
+            addCriterion("company >", value, "company");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyGreaterThanOrEqualTo(String value) {
+            addCriterion("company >=", value, "company");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyLessThan(String value) {
+            addCriterion("company <", value, "company");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyLessThanOrEqualTo(String value) {
+            addCriterion("company <=", value, "company");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyLike(String value) {
+            addCriterion("company like", value, "company");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyNotLike(String value) {
+            addCriterion("company not like", value, "company");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyIn(List<String> values) {
+            addCriterion("company in", values, "company");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyNotIn(List<String> values) {
+            addCriterion("company not in", values, "company");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyBetween(String value1, String value2) {
+            addCriterion("company between", value1, value2, "company");
+            return (Criteria) this;
+        }
+
+        public Criteria andCompanyNotBetween(String value1, String value2) {
+            addCriterion("company not between", value1, value2, "company");
+            return (Criteria) this;
+        }
+
         public Criteria andCostIsNull() {
             addCriterion("cost is null");
             return (Criteria) this;
@@ -291,136 +361,6 @@ public class TLogisticsExample {
 
         public Criteria andAreaNotBetween(String value1, String value2) {
             addCriterion("area not between", value1, value2, "area");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyIsNull() {
-            addCriterion("company is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyIsNotNull() {
-            addCriterion("company is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyEqualTo(String value) {
-            addCriterion("company =", value, "company");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyNotEqualTo(String value) {
-            addCriterion("company <>", value, "company");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyGreaterThan(String value) {
-            addCriterion("company >", value, "company");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyGreaterThanOrEqualTo(String value) {
-            addCriterion("company >=", value, "company");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyLessThan(String value) {
-            addCriterion("company <", value, "company");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyLessThanOrEqualTo(String value) {
-            addCriterion("company <=", value, "company");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyLike(String value) {
-            addCriterion("company like", value, "company");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyNotLike(String value) {
-            addCriterion("company not like", value, "company");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyIn(List<String> values) {
-            addCriterion("company in", values, "company");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyNotIn(List<String> values) {
-            addCriterion("company not in", values, "company");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyBetween(String value1, String value2) {
-            addCriterion("company between", value1, value2, "company");
-            return (Criteria) this;
-        }
-
-        public Criteria andCompanyNotBetween(String value1, String value2) {
-            addCriterion("company not between", value1, value2, "company");
-            return (Criteria) this;
-        }
-
-        public Criteria andShopIdIsNull() {
-            addCriterion("shop_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andShopIdIsNotNull() {
-            addCriterion("shop_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andShopIdEqualTo(Integer value) {
-            addCriterion("shop_id =", value, "shopId");
-            return (Criteria) this;
-        }
-
-        public Criteria andShopIdNotEqualTo(Integer value) {
-            addCriterion("shop_id <>", value, "shopId");
-            return (Criteria) this;
-        }
-
-        public Criteria andShopIdGreaterThan(Integer value) {
-            addCriterion("shop_id >", value, "shopId");
-            return (Criteria) this;
-        }
-
-        public Criteria andShopIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("shop_id >=", value, "shopId");
-            return (Criteria) this;
-        }
-
-        public Criteria andShopIdLessThan(Integer value) {
-            addCriterion("shop_id <", value, "shopId");
-            return (Criteria) this;
-        }
-
-        public Criteria andShopIdLessThanOrEqualTo(Integer value) {
-            addCriterion("shop_id <=", value, "shopId");
-            return (Criteria) this;
-        }
-
-        public Criteria andShopIdIn(List<Integer> values) {
-            addCriterion("shop_id in", values, "shopId");
-            return (Criteria) this;
-        }
-
-        public Criteria andShopIdNotIn(List<Integer> values) {
-            addCriterion("shop_id not in", values, "shopId");
-            return (Criteria) this;
-        }
-
-        public Criteria andShopIdBetween(Integer value1, Integer value2) {
-            addCriterion("shop_id between", value1, value2, "shopId");
-            return (Criteria) this;
-        }
-
-        public Criteria andShopIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("shop_id not between", value1, value2, "shopId");
             return (Criteria) this;
         }
     }

@@ -5,8 +5,10 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="goodsname" property="goodsname" jdbcType="VARCHAR" />
     <result column="goodsprice" property="goodsprice" jdbcType="DOUBLE" />
-    <result column="goodsversion" property="goodsversion" jdbcType="VARCHAR" />
+    <result column="goods_inf" property="goodsInf" jdbcType="VARCHAR" />
     <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+    <result column="goods_volume" property="goodsVolume" jdbcType="INTEGER" />
+    <result column="preview_pic" property="previewPic" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, goodsname, goodsprice, goodsversion, shop_id
+    id, goodsname, goodsprice, goods_inf, shop_id, goods_volume, preview_pic
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.models.TGoodsExample" >
     select
@@ -101,9 +103,11 @@
   </delete>
   <insert id="insert" parameterType="com.models.TGoods" >
     insert into t_goods (id, goodsname, goodsprice, 
-      goodsversion, shop_id)
+      goods_inf, shop_id, goods_volume, 
+      preview_pic)
     values (#{id,jdbcType=INTEGER}, #{goodsname,jdbcType=VARCHAR}, #{goodsprice,jdbcType=DOUBLE}, 
-      #{goodsversion,jdbcType=VARCHAR}, #{shopId,jdbcType=INTEGER})
+      #{goodsInf,jdbcType=VARCHAR}, #{shopId,jdbcType=INTEGER}, #{goodsVolume,jdbcType=INTEGER}, 
+      #{previewPic,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.models.TGoods" >
     insert into t_goods
@@ -117,11 +121,17 @@
       <if test="goodsprice != null" >
         goodsprice,
       </if>
-      <if test="goodsversion != null" >
-        goodsversion,
+      <if test="goodsInf != null" >
+        goods_inf,
       </if>
       <if test="shopId != null" >
         shop_id,
+      </if>
+      <if test="goodsVolume != null" >
+        goods_volume,
+      </if>
+      <if test="previewPic != null" >
+        preview_pic,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -134,11 +144,17 @@
       <if test="goodsprice != null" >
         #{goodsprice,jdbcType=DOUBLE},
       </if>
-      <if test="goodsversion != null" >
-        #{goodsversion,jdbcType=VARCHAR},
+      <if test="goodsInf != null" >
+        #{goodsInf,jdbcType=VARCHAR},
       </if>
       <if test="shopId != null" >
         #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsVolume != null" >
+        #{goodsVolume,jdbcType=INTEGER},
+      </if>
+      <if test="previewPic != null" >
+        #{previewPic,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -160,11 +176,17 @@
       <if test="record.goodsprice != null" >
         goodsprice = #{record.goodsprice,jdbcType=DOUBLE},
       </if>
-      <if test="record.goodsversion != null" >
-        goodsversion = #{record.goodsversion,jdbcType=VARCHAR},
+      <if test="record.goodsInf != null" >
+        goods_inf = #{record.goodsInf,jdbcType=VARCHAR},
       </if>
       <if test="record.shopId != null" >
         shop_id = #{record.shopId,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsVolume != null" >
+        goods_volume = #{record.goodsVolume,jdbcType=INTEGER},
+      </if>
+      <if test="record.previewPic != null" >
+        preview_pic = #{record.previewPic,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -176,8 +198,10 @@
     set id = #{record.id,jdbcType=INTEGER},
       goodsname = #{record.goodsname,jdbcType=VARCHAR},
       goodsprice = #{record.goodsprice,jdbcType=DOUBLE},
-      goodsversion = #{record.goodsversion,jdbcType=VARCHAR},
-      shop_id = #{record.shopId,jdbcType=INTEGER}
+      goods_inf = #{record.goodsInf,jdbcType=VARCHAR},
+      shop_id = #{record.shopId,jdbcType=INTEGER},
+      goods_volume = #{record.goodsVolume,jdbcType=INTEGER},
+      preview_pic = #{record.previewPic,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -191,11 +215,17 @@
       <if test="goodsprice != null" >
         goodsprice = #{goodsprice,jdbcType=DOUBLE},
       </if>
-      <if test="goodsversion != null" >
-        goodsversion = #{goodsversion,jdbcType=VARCHAR},
+      <if test="goodsInf != null" >
+        goods_inf = #{goodsInf,jdbcType=VARCHAR},
       </if>
       <if test="shopId != null" >
         shop_id = #{shopId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsVolume != null" >
+        goods_volume = #{goodsVolume,jdbcType=INTEGER},
+      </if>
+      <if test="previewPic != null" >
+        preview_pic = #{previewPic,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -204,8 +234,10 @@
     update t_goods
     set goodsname = #{goodsname,jdbcType=VARCHAR},
       goodsprice = #{goodsprice,jdbcType=DOUBLE},
-      goodsversion = #{goodsversion,jdbcType=VARCHAR},
-      shop_id = #{shopId,jdbcType=INTEGER}
+      goods_inf = #{goodsInf,jdbcType=VARCHAR},
+      shop_id = #{shopId,jdbcType=INTEGER},
+      goods_volume = #{goodsVolume,jdbcType=INTEGER},
+      preview_pic = #{previewPic,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

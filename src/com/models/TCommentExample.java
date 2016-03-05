@@ -322,6 +322,76 @@ public class TCommentExample {
             return (Criteria) this;
         }
 
+        public Criteria andReplyCommentIsNull() {
+            addCriterion("reply_comment is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentIsNotNull() {
+            addCriterion("reply_comment is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentEqualTo(String value) {
+            addCriterion("reply_comment =", value, "replyComment");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentNotEqualTo(String value) {
+            addCriterion("reply_comment <>", value, "replyComment");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentGreaterThan(String value) {
+            addCriterion("reply_comment >", value, "replyComment");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentGreaterThanOrEqualTo(String value) {
+            addCriterion("reply_comment >=", value, "replyComment");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentLessThan(String value) {
+            addCriterion("reply_comment <", value, "replyComment");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentLessThanOrEqualTo(String value) {
+            addCriterion("reply_comment <=", value, "replyComment");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentLike(String value) {
+            addCriterion("reply_comment like", value, "replyComment");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentNotLike(String value) {
+            addCriterion("reply_comment not like", value, "replyComment");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentIn(List<String> values) {
+            addCriterion("reply_comment in", values, "replyComment");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentNotIn(List<String> values) {
+            addCriterion("reply_comment not in", values, "replyComment");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentBetween(String value1, String value2) {
+            addCriterion("reply_comment between", value1, value2, "replyComment");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyCommentNotBetween(String value1, String value2) {
+            addCriterion("reply_comment not between", value1, value2, "replyComment");
+            return (Criteria) this;
+        }
+
         public Criteria andBuyerIdIsNull() {
             addCriterion("buyer_id is null");
             return (Criteria) this;

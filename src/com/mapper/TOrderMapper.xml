@@ -5,7 +5,8 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="order_status" property="orderStatus" jdbcType="VARCHAR" />
     <result column="order_address" property="orderAddress" jdbcType="VARCHAR" />
-    <result column="buyder_id" property="buyderId" jdbcType="INTEGER" />
+    <result column="order_logistics_price" property="orderLogisticsPrice" jdbcType="DOUBLE" />
+    <result column="buyer_id" property="buyerId" jdbcType="INTEGER" />
     <result column="shop_id" property="shopId" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -67,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, order_status, order_address, buyder_id, shop_id
+    id, order_status, order_address, order_logistics_price, buyer_id, shop_id
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.models.TOrderExample" >
     select
@@ -101,9 +102,11 @@
   </delete>
   <insert id="insert" parameterType="com.models.TOrder" >
     insert into t_order (id, order_status, order_address, 
-      buyder_id, shop_id)
+      order_logistics_price, buyer_id, shop_id
+      )
     values (#{id,jdbcType=INTEGER}, #{orderStatus,jdbcType=VARCHAR}, #{orderAddress,jdbcType=VARCHAR}, 
-      #{buyderId,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER})
+      #{orderLogisticsPrice,jdbcType=DOUBLE}, #{buyerId,jdbcType=INTEGER}, #{shopId,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.models.TOrder" >
     insert into t_order
@@ -117,8 +120,11 @@
       <if test="orderAddress != null" >
         order_address,
       </if>
-      <if test="buyderId != null" >
-        buyder_id,
+      <if test="orderLogisticsPrice != null" >
+        order_logistics_price,
+      </if>
+      <if test="buyerId != null" >
+        buyer_id,
       </if>
       <if test="shopId != null" >
         shop_id,
@@ -134,8 +140,11 @@
       <if test="orderAddress != null" >
         #{orderAddress,jdbcType=VARCHAR},
       </if>
-      <if test="buyderId != null" >
-        #{buyderId,jdbcType=INTEGER},
+      <if test="orderLogisticsPrice != null" >
+        #{orderLogisticsPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="buyerId != null" >
+        #{buyerId,jdbcType=INTEGER},
       </if>
       <if test="shopId != null" >
         #{shopId,jdbcType=INTEGER},
@@ -160,8 +169,11 @@
       <if test="record.orderAddress != null" >
         order_address = #{record.orderAddress,jdbcType=VARCHAR},
       </if>
-      <if test="record.buyderId != null" >
-        buyder_id = #{record.buyderId,jdbcType=INTEGER},
+      <if test="record.orderLogisticsPrice != null" >
+        order_logistics_price = #{record.orderLogisticsPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.buyerId != null" >
+        buyer_id = #{record.buyerId,jdbcType=INTEGER},
       </if>
       <if test="record.shopId != null" >
         shop_id = #{record.shopId,jdbcType=INTEGER},
@@ -176,7 +188,8 @@
     set id = #{record.id,jdbcType=INTEGER},
       order_status = #{record.orderStatus,jdbcType=VARCHAR},
       order_address = #{record.orderAddress,jdbcType=VARCHAR},
-      buyder_id = #{record.buyderId,jdbcType=INTEGER},
+      order_logistics_price = #{record.orderLogisticsPrice,jdbcType=DOUBLE},
+      buyer_id = #{record.buyerId,jdbcType=INTEGER},
       shop_id = #{record.shopId,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -191,8 +204,11 @@
       <if test="orderAddress != null" >
         order_address = #{orderAddress,jdbcType=VARCHAR},
       </if>
-      <if test="buyderId != null" >
-        buyder_id = #{buyderId,jdbcType=INTEGER},
+      <if test="orderLogisticsPrice != null" >
+        order_logistics_price = #{orderLogisticsPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="buyerId != null" >
+        buyer_id = #{buyerId,jdbcType=INTEGER},
       </if>
       <if test="shopId != null" >
         shop_id = #{shopId,jdbcType=INTEGER},
@@ -204,7 +220,8 @@
     update t_order
     set order_status = #{orderStatus,jdbcType=VARCHAR},
       order_address = #{orderAddress,jdbcType=VARCHAR},
-      buyder_id = #{buyderId,jdbcType=INTEGER},
+      order_logistics_price = #{orderLogisticsPrice,jdbcType=DOUBLE},
+      buyer_id = #{buyerId,jdbcType=INTEGER},
       shop_id = #{shopId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

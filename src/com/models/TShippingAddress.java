@@ -7,6 +7,10 @@ public class TShippingAddress {
 
     private String shippingAddress;
 
+    private String shippingPhone;
+
+    private String shippingPostcode;
+
     public Integer getId() {
         return id;
     }
@@ -29,5 +33,21 @@ public class TShippingAddress {
 
     public void setShippingAddress(String shippingAddress) {
         this.shippingAddress = shippingAddress == null ? null : shippingAddress.trim();
+    }
+
+    public String getShippingPhone() {
+        return shippingPhone;
+    }
+
+    public void setShippingPhone(String shippingPhone) {
+        this.shippingPhone = shippingPhone == null ? null : shippingPhone.trim();
+    }
+
+    public String getShippingPostcode() {
+        return shippingPostcode;
+    }
+
+    public void setShippingPostcode(String shippingPostcode) {
+        this.shippingPostcode = shippingPostcode == null ? null : shippingPostcode.trim();
     }
 }

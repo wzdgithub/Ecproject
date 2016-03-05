@@ -3,13 +3,11 @@ package com.models;
 public class TLogistics {
     private Integer id;
 
+    private String company;
+
     private Double cost;
 
     private String area;
-
-    private String company;
-
-    private Integer shopId;
 
     public Integer getId() {
         return id;
@@ -17,6 +15,14 @@ public class TLogistics {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company == null ? null : company.trim();
     }
 
     public Double getCost() {
@@ -33,21 +39,5 @@ public class TLogistics {
 
     public void setArea(String area) {
         this.area = area == null ? null : area.trim();
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company == null ? null : company.trim();
-    }
-
-    public Integer getShopId() {
-        return shopId;
-    }
-
-    public void setShopId(Integer shopId) {
-        this.shopId = shopId;
     }
 }

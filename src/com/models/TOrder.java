@@ -7,7 +7,9 @@ public class TOrder {
 
     private String orderAddress;
 
-    private Integer buyderId;
+    private Double orderLogisticsPrice;
+
+    private Integer buyerId;
 
     private Integer shopId;
 
@@ -35,12 +37,20 @@ public class TOrder {
         this.orderAddress = orderAddress == null ? null : orderAddress.trim();
     }
 
-    public Integer getBuyderId() {
-        return buyderId;
+    public Double getOrderLogisticsPrice() {
+        return orderLogisticsPrice;
     }
 
-    public void setBuyderId(Integer buyderId) {
-        this.buyderId = buyderId;
+    public void setOrderLogisticsPrice(Double orderLogisticsPrice) {
+        this.orderLogisticsPrice = orderLogisticsPrice;
+    }
+
+    public Integer getBuyerId() {
+        return buyerId;
+    }
+
+    public void setBuyerId(Integer buyerId) {
+        this.buyerId = buyerId;
     }
 
     public Integer getShopId() {

@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.models.TPicture" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="picture" property="picture" jdbcType="VARCHAR" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
     <result column="shop_id" property="shopId" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -65,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, picture, shop_id
+    id, picture, goods_id, shop_id
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.models.TPictureExample" >
     select
@@ -98,10 +99,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.models.TPicture" >
-    insert into t_picture (id, picture, shop_id
-      )
-    values (#{id,jdbcType=INTEGER}, #{picture,jdbcType=VARCHAR}, #{shopId,jdbcType=INTEGER}
-      )
+    insert into t_picture (id, picture, goods_id, 
+      shop_id)
+    values (#{id,jdbcType=INTEGER}, #{picture,jdbcType=VARCHAR}, #{goodsId,jdbcType=INTEGER}, 
+      #{shopId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.models.TPicture" >
     insert into t_picture
@@ -111,6 +112,9 @@
       </if>
       <if test="picture != null" >
         picture,
+      </if>
+      <if test="goodsId != null" >
+        goods_id,
       </if>
       <if test="shopId != null" >
         shop_id,
@@ -122,6 +126,9 @@
       </if>
       <if test="picture != null" >
         #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null" >
+        #{goodsId,jdbcType=INTEGER},
       </if>
       <if test="shopId != null" >
         #{shopId,jdbcType=INTEGER},
@@ -143,6 +150,9 @@
       <if test="record.picture != null" >
         picture = #{record.picture,jdbcType=VARCHAR},
       </if>
+      <if test="record.goodsId != null" >
+        goods_id = #{record.goodsId,jdbcType=INTEGER},
+      </if>
       <if test="record.shopId != null" >
         shop_id = #{record.shopId,jdbcType=INTEGER},
       </if>
@@ -155,6 +165,7 @@
     update t_picture
     set id = #{record.id,jdbcType=INTEGER},
       picture = #{record.picture,jdbcType=VARCHAR},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
       shop_id = #{record.shopId,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -166,6 +177,9 @@
       <if test="picture != null" >
         picture = #{picture,jdbcType=VARCHAR},
       </if>
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
       <if test="shopId != null" >
         shop_id = #{shopId,jdbcType=INTEGER},
       </if>
@@ -175,6 +189,7 @@
   <update id="updateByPrimaryKey" parameterType="com.models.TPicture" >
     update t_picture
     set picture = #{picture,jdbcType=VARCHAR},
+      goods_id = #{goodsId,jdbcType=INTEGER},
       shop_id = #{shopId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

@@ -3,10 +3,9 @@
 <mapper namespace="com.mapper.TLogisticsMapper" >
   <resultMap id="BaseResultMap" type="com.models.TLogistics" >
     <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="company" property="company" jdbcType="VARCHAR" />
     <result column="cost" property="cost" jdbcType="DOUBLE" />
     <result column="area" property="area" jdbcType="VARCHAR" />
-    <result column="company" property="company" jdbcType="VARCHAR" />
-    <result column="shop_id" property="shopId" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, cost, area, company, shop_id
+    id, company, cost, area
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.models.TLogisticsExample" >
     select
@@ -100,10 +99,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.models.TLogistics" >
-    insert into t_logistics (id, cost, area, 
-      company, shop_id)
-    values (#{id,jdbcType=INTEGER}, #{cost,jdbcType=DOUBLE}, #{area,jdbcType=VARCHAR}, 
-      #{company,jdbcType=VARCHAR}, #{shopId,jdbcType=INTEGER})
+    insert into t_logistics (id, company, cost, 
+      area)
+    values (#{id,jdbcType=INTEGER}, #{company,jdbcType=VARCHAR}, #{cost,jdbcType=DOUBLE}, 
+      #{area,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.models.TLogistics" >
     insert into t_logistics
@@ -111,34 +110,28 @@
       <if test="id != null" >
         id,
       </if>
+      <if test="company != null" >
+        company,
+      </if>
       <if test="cost != null" >
         cost,
       </if>
       <if test="area != null" >
         area,
       </if>
-      <if test="company != null" >
-        company,
-      </if>
-      <if test="shopId != null" >
-        shop_id,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
+      </if>
+      <if test="company != null" >
+        #{company,jdbcType=VARCHAR},
       </if>
       <if test="cost != null" >
         #{cost,jdbcType=DOUBLE},
       </if>
       <if test="area != null" >
         #{area,jdbcType=VARCHAR},
-      </if>
-      <if test="company != null" >
-        #{company,jdbcType=VARCHAR},
-      </if>
-      <if test="shopId != null" >
-        #{shopId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -154,17 +147,14 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
+      <if test="record.company != null" >
+        company = #{record.company,jdbcType=VARCHAR},
+      </if>
       <if test="record.cost != null" >
         cost = #{record.cost,jdbcType=DOUBLE},
       </if>
       <if test="record.area != null" >
         area = #{record.area,jdbcType=VARCHAR},
-      </if>
-      <if test="record.company != null" >
-        company = #{record.company,jdbcType=VARCHAR},
-      </if>
-      <if test="record.shopId != null" >
-        shop_id = #{record.shopId,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -174,10 +164,9 @@
   <update id="updateByExample" parameterType="map" >
     update t_logistics
     set id = #{record.id,jdbcType=INTEGER},
-      cost = #{record.cost,jdbcType=DOUBLE},
-      area = #{record.area,jdbcType=VARCHAR},
       company = #{record.company,jdbcType=VARCHAR},
-      shop_id = #{record.shopId,jdbcType=INTEGER}
+      cost = #{record.cost,jdbcType=DOUBLE},
+      area = #{record.area,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -185,27 +174,23 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.models.TLogistics" >
     update t_logistics
     <set >
+      <if test="company != null" >
+        company = #{company,jdbcType=VARCHAR},
+      </if>
       <if test="cost != null" >
         cost = #{cost,jdbcType=DOUBLE},
       </if>
       <if test="area != null" >
         area = #{area,jdbcType=VARCHAR},
       </if>
-      <if test="company != null" >
-        company = #{company,jdbcType=VARCHAR},
-      </if>
-      <if test="shopId != null" >
-        shop_id = #{shopId,jdbcType=INTEGER},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.models.TLogistics" >
     update t_logistics
-    set cost = #{cost,jdbcType=DOUBLE},
-      area = #{area,jdbcType=VARCHAR},
-      company = #{company,jdbcType=VARCHAR},
-      shop_id = #{shopId,jdbcType=INTEGER}
+    set company = #{company,jdbcType=VARCHAR},
+      cost = #{cost,jdbcType=DOUBLE},
+      area = #{area,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

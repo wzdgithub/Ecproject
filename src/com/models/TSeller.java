@@ -11,6 +11,8 @@ public class TSeller {
 
     private String checkStatus;
 
+    private Integer checkScore;
+
     public Integer getId() {
         return id;
     }
@@ -49,5 +51,13 @@ public class TSeller {
 
     public void setCheckStatus(String checkStatus) {
         this.checkStatus = checkStatus == null ? null : checkStatus.trim();
+    }
+
+    public Integer getCheckScore() {
+        return checkScore;
+    }
+
+    public void setCheckScore(Integer checkScore) {
+        this.checkScore = checkScore;
     }
 }
