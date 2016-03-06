@@ -26,4 +26,17 @@ public class BuyerServiceImpl implements BuyerService{
         if(list.size()==0) return null;
         else return list.get(0);
     }
+
+    public boolean checkRegister(String username){
+        TBuyerExample buyerExample = new TBuyerExample();
+        TBuyerExample.Criteria criteria =buyerExample.createCriteria();
+        criteria.andUsernameEqualTo(username);
+        List<TBuyer> list = buyerMapper.selectByExample(buyerExample);
+        if(list.size()==0) return  true;
+        else return false;
+    }
+
+    public void register(TBuyer buyer){
+        buyerMapper.insert(buyer);
+    }
 }
