@@ -22,10 +22,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Spring" level="project" />
-    <orderEntry type="library" name="c3p0" level="project" />
     <orderEntry type="library" name="servlet-api" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="c3p0" level="project" />
     <orderEntry type="library" name="mybatis_plugins" level="project" />
-    <orderEntry type="library" name="junit" level="project" />
   </component>
 </module>
