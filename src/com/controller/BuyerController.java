@@ -3,6 +3,8 @@ package com.controller;
 import com.models.TBuyer;
 import com.service.BuyerService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,23 +21,23 @@ public class BuyerController {
         this.buyerService = buyerService;
     }
 
-    public void login(String username,
-                      String password,
+    @RequestMapping("/login")
+    public void login(@RequestParam(value = "username") String username,
+                      @RequestParam(value = "password") String password,
                       HttpServletResponse response,
                       HttpSession session) throws Exception{
         TBuyer buyer = buyerService.login(username, password);
+        response.setCharacterEncoding("utf-8");
         if (buyer == null) {
             response.getWriter().print("error");
         }else {
             session.setAttribute("user",buyer);
-            response.sendRedirect("index.jsp");
         }
     }
 
     public void register(TBuyer buyer,HttpServletResponse response) throws Exception{
         if(buyerService.checkRegister(buyer.getUsername())){
             buyerService.register(buyer);
-            response.sendRedirect("login.jsp");
         }else{
             response.getWriter().print("same_username");
         }

@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
     <bean class="com.controller.AdvertisementController"/>
-    <!--<bean class="com.controller.BuyerController"/>-->
+    <bean class="com.controller.BuyerController" p:buyerService-ref="buyerService"/>
     <!--<bean class="com.controller.CollectionController"/>-->
     <!--<bean class="com.controller.CommentController"/>-->
     <!--<bean class="com.controller.GoodsController"/>-->

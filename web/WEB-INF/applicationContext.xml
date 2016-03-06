@@ -53,10 +53,10 @@
         <!--<property name="mapperInterface" value="com.mapper.TAdvertisementMapper"/>-->
         <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
     <!--</bean>-->
-    <!--<bean id="buyerMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
-        <!--<property name="mapperInterface" value="com.mapper.TBuyerMapper"/>-->
-        <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
-    <!--</bean>-->
+    <bean id="buyerMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.mapper.TBuyerMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
     <!--<bean id="collectionMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
         <!--<property name="mapperInterface" value="com.mapper.TCollectionMapper"/>-->
         <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
@@ -116,7 +116,7 @@
 
     <!--<bean id="advertisementService" class="com.service.impl.AdvertisementServiceImpl"-->
           <!--p:advertisementMapper-ref="advertisementMapper"/>-->
-    <!--<bean id="buyerService" class="com.service.impl.BuyerServiceImpl" p:buyerMapper-ref="buyerMapper"/>-->
+    <bean id="buyerService" class="com.service.impl.BuyerServiceImpl" p:buyerMapper-ref="buyerMapper"/>
     <!--<bean id="collectionService" class="com.service.impl.CollectionServiceImpl"-->
           <!--p:collectionMapper-ref="collectionMapper"/>-->
     <!--<bean id="commentService" class="com.service.impl.CommentServiceImpl" p:commentMapper-ref="commentMapper"/>-->
@@ -136,23 +136,26 @@
     <!--<bean id="visitLogService" class="com.service.impl.VisitLogServiceImpl" p:visitLogMapper-ref="visitLogMapper"/>-->
 
     <!--配置事务管理器-->
-    <!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
-        <!--<property name="dataSource" ref="dataSource"></property>-->
-    <!--</bean>-->
-    <!--<tx:advice id="txAdvice" transaction-manager="transactionManager">-->
-        <!--<tx:attributes>-->
-            <!--<tx:method name="save*" propagation="REQUIRED"/>-->
-            <!--<tx:method name="delete*" propagation="REQUIRED"/>-->
-            <!--<tx:method name="insert*" propagation="REQUIRED"/>-->
-            <!--<tx:method name="update*" propagation="REQUIRED"/>-->
-            <!--<tx:method name="add*" propagation="REQUIRED"/>-->
-            <!--<tx:method name="modify*" propagation="REQUIRED"/>-->
-            <!--<tx:method name="find*" propagation="SUPPORTS" read-only="true"/>-->
-            <!--<tx:method name="get*" propagation="SUPPORTS" read-only="true"/>-->
-            <!--<tx:method name="select*" propagation="SUPPORTS" read-only="true"/>-->
-        <!--</tx:attributes>-->
-    <!--</tx:advice>-->
-    <!--<aop:config>-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="save*" propagation="REQUIRED"/>
+            <tx:method name="delete*" propagation="REQUIRED"/>
+            <tx:method name="insert*" propagation="REQUIRED"/>
+            <tx:method name="update*" propagation="REQUIRED"/>
+            <tx:method name="add*" propagation="REQUIRED"/>
+            <tx:method name="modify*" propagation="REQUIRED"/>
+            <tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="select*" propagation="SUPPORTS" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:pointcut id="myPointcut" expression="bean(buyerService)"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="myPointcut"/>
+
         <!--<aop:pointcut id="myPointcut" expression="bean(advertisementService)||-->
                                                   <!--bean(buyerService)||-->
                                                   <!--bean(collectionService)||-->
@@ -170,6 +173,6 @@
                                                   <!--bean(usedGoodsService)||-->
                                                   <!--bean(visitLogService)"/>-->
         <!--<aop:advisor advice-ref="txAdvice" pointcut-ref="myPointcut"/>-->
-    <!--</aop:config>-->
+    </aop:config>
 
 </beans>
